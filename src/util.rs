@@ -28,7 +28,7 @@ impl Halveable for u32 {
     type HalfSize = u16;
 
     fn split(self) -> (u16, u16) { ((self >> u16::BITS) as u16, self as u16) }
-    fn join(h1: u16, h2: u16) -> u32 { ((h1 as u32) << u16::BITS as u32) + (h2 as u32) }
+    fn join(h1: u16, h2: u16) -> u32 { ((h1 as u32) << u16::BITS) + (h2 as u32) }
 }
 impl Halveable for u16 {
     type HalfSize = u8;

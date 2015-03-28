@@ -327,8 +327,8 @@ impl<Size: ExtInt> Store<Size> {
     #[inline]
     pub fn iter<'a>(&'a self) -> Box<Iterator<Item = Size> + 'a> {
         match self {
-            &Array(ref vec) => Box::new(vec.iter().map(|x| *x)) as Box<Iterator<Item = Size> + 'a>,
-            &Bitmap(ref bits) => Box::new(BitmapIter::<Size>::new(bits)) as Box<Iterator<Item = Size> + 'a>,
+            &Array(ref vec) => Box::new(vec.iter().map(|x| *x)),
+            &Bitmap(ref bits) => Box::new(BitmapIter::<Size>::new(bits)),
         }
     }
 
